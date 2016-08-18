@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = "Bryan.be"
   config.vm.network "forwarded_port", guest: 80, host: 8000
+  config.vm.provision "shell", path: "Provision_nginx.sh"
+  config.vm.provision "shell", path: "Provision_php.sh"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
